@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="io.userhabit.plugin.cordova"
+    version="0.0.1">
+    <name>UserhabitPlugin</name>
+    <description>Cordova Userhabit Plugin</description>
+    <author>AndbuT©</author>
+    <license>Apache 2.0</license>
+    <keywords>cordova,userhabit</keywords>
+    <repo>https://github.com/AndbutCorp/cordova-plugin-userhabit.git</repo>
+    <issue>https://github.com/AndbutCorp/cordova-plugin-userhabit/issues</issue>
+
+    <js-module src="www/userhabit.js" name="userhabit">
+        <merges target="cordova.userhabit" />
+    </js-module>
+    
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Userhabit">
+                <param name="android-package" value="io.userhabit.plugin.cordova.UserhabitPlugin"/>
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+        </config-file>
+
+        <source-file src="src/android/UserhabitPlugin.java" target-dir="src/io/userhabit/plugin/cordova" />
+
+     </platform>
+
+
+</plugin>
