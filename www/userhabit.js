@@ -30,4 +30,7 @@ module.exports = {
     passCheckpoint: function(name) {
         exec(null, null, "Userhabit", "passCheckpoint", [name]);
     },
+    setFragmentTag: function(tag) {
+        exec(null, null, "Userhabit", "setFragmentTag", [tag]);
+    },
 };

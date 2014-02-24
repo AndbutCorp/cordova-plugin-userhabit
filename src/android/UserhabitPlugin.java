@@ -40,6 +40,11 @@ public class UserhabitPlugin extends CordovaPlugin {
 			callbackContext.success();
 
             return true;
+        } else if (action.equals("setFragmentTag")) {
+
+        	Userhabit.setFragmentTag(args.getString(0));
+
+        	callbackContext.success();
         }
         return false;
     }
