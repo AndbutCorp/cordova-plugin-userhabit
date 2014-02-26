@@ -13,7 +13,7 @@
     <issue>https://github.com/AndbutCorp/cordova-plugin-userhabit/issues</issue>
 
     <js-module src="www/userhabit.js" name="userhabit">
-        <merges target="cordova.userhabit" />
+        <clobbers target="cordova.userhabit" />
     </js-module>
     
     <!-- android -->

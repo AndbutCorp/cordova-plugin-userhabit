@@ -14,12 +14,17 @@
 *   limitations under the License.
 */
 
-var exec = require('cordova/exec');
+var exec = require('cordova/exec'),
+    channel = require('cordova/channel');
+
+
+channel.createSticky('onCordovaInfoReady');
+// Tell cordova channel to wait on the CordovaInfoReady event
+channel.waitForInitialization('onCordovaInfoReady');
 
 /**
  * 
  */
-
 module.exports = {
 
     /**
@@ -34,3 +39,9 @@ module.exports = {
         exec(null, null, "Userhabit", "setFragmentTag", [tag]);
     },
 };
+
+
+channel.onCordovaReady.subscribe(function() {
+    // TODO: Implements initial codes
+    // cordova.userhabit.setFragmentTag(window.location.href);
+});
