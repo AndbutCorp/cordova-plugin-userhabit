@@ -30,11 +30,17 @@ module.exports = {
     /**
      * Pass the checkpoint.
      *
-     * @param {String}        The number of milliseconds to vibrate for.
+     * @param {String}        The checkpoint name
      */
     passCheckpoint: function(name) {
         exec(null, null, "Userhabit", "passCheckpoint", [name]);
     },
+
+    /**
+     * set the Fragment Tag.
+     *
+     * @param {String}        The fragment tag.
+     */
     setFragmentTag: function(tag) {
         exec(null, null, "Userhabit", "setFragmentTag", [tag]);
     },
