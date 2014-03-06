@@ -24,6 +24,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.app.Activity;
+
+import io.userhabit.model.UserhabitOnSurveyClosedHandler;
 import io.userhabit.service.Userhabit;
 
 /**
