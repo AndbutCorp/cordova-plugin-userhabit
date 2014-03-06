@@ -31,18 +31,20 @@ module.exports = {
      * Pass the checkpoint.
      *
      * @param {String}        The checkpoint name
+     * @param {Function}      The success handler
      */
-    passCheckpoint: function(name) {
-        exec(null, null, "Userhabit", "passCheckpoint", [name]);
+    passCheckpoint: function(name, success) {
+        exec(success, null, "Userhabit", "passCheckpoint", [name]);
     },
 
     /**
      * set the Fragment Tag.
      *
-     * @param {String}        The fragment tag.
+     * @param {String}        The fragment tag
+     * @param {Function}      The success handler
      */
-    setFragmentTag: function(tag) {
-        exec(null, null, "Userhabit", "setFragmentTag", [tag]);
+    setFragmentTag: function(tag, success) {
+        exec(success, null, "Userhabit", "setFragmentTag", [tag]);
     },
 };
 

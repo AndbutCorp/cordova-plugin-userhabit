@@ -32,19 +32,26 @@ import io.userhabit.service.Userhabit;
 public class UserhabitPlugin extends CordovaPlugin {
 
     @Override
-    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+    public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
         if (action.equals("passCheckpoint")) {
 
-			Userhabit.passCheckpoint(cordova.getActivity(), args.getString(0));
+			Userhabit.passCheckpoint(cordova.getActivity(), args.getString(0), new UserhabitOnSurveyClosedHandler() {
+            
+                @Override
+                public void onSurveyClosed(Activity activity) {
+                    callbackContext.success(); 
+                }
 
-			callbackContext.success();
+            });
 
             return true;
         } else if (action.equals("setFragmentTag")) {
 
         	Userhabit.setFragmentTag(args.getString(0));
+            
+            callbackContext.success(); 
 
-        	callbackContext.success();
+            return true;
         }
         return false;
     }
