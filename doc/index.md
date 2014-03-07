@@ -28,4 +28,11 @@ This plugin provides to use Userhabit.
 
 ### Example
 
+    // if you want pass checkpoint
     cordova.userhabit.passCheckpoint('CHECKPOINT');
+
+    // if you want pass checkpoint and add the event handler for completed surveys)
+    cordova.userhabit.passCheckpoint('CHECKPOINT', function () { /* event handler for a complete */ });
+
+    // if you want set the fragment tag
+    cordova.userhabit.setFragmentTag('FRAGMENT_TAG');
